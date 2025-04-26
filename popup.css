@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #f4f7f9;
+  color: #333;
+  min-width: 250px;
+  font-size: 14px;
+}
+
+.container {
+  padding: 15px 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+#toggleLabel {
+    margin-left: 10px;
+    font-weight: 500;
+    color: #495057;
+}
+
+.info {
+    font-size: 12px;
+    color: #6c757d;
+    margin-top: 10px;
+    margin-bottom: 15px; /* Añadir espacio antes del botón */
+}
+
+/* --- Estilos del Interruptor (Toggle Switch) --- */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3; /* Azul ON */
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 24px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* --- Estilos del Botón Recargar --- */
+.button {
+  display: inline-flex; /* Para alinear icono y texto */
+  align-items: center;
+  justify-content: center;
+  gap: 6px; /* Espacio entre icono y texto */
+  width: 100%; /* Ocupar ancho */
+  padding: 9px 15px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-sizing: border-box; /* Incluir padding en el ancho */
+}
+
+.reload-button {
+  background-color: #6c757d; /* Gris oscuro */
+  margin-top: 10px; /* Espacio arriba */
+}
+
+.reload-button:hover {
+  background-color: #5a6268; /* Gris más oscuro */
+}
+
+.reload-button:active {
+  background-color: #545b62;
+  transform: scale(0.98);
+}
+
+.icon {
+    font-size: 1.1em;
+    display: inline-block;
+    line-height: 1; /* Ajustar línea para centrar icono */
+}

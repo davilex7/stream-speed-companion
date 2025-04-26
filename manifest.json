@@ -1,0 +1,62 @@
+{
+  "manifest_version": 3,
+  "name": "StreamSpeed Companion",
+  "version": "1.2.0", // Version incrementada
+  "description": "Controla la velocidad de reproduccion en videos HTML5 con un controlador flotante.", // Descripcion simplificada
+  "icons": {
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": [
+    "storage",      // Para guardar velocidad, tema y visibilidad del controlador
+    "activeTab",    // Para interactuar con la pestaña activa desde el popup y comandos
+    "scripting",    // Para inyectar el content script
+    "commands"      // Para los atajos de teclado (se mantienen)
+  ],
+  "action": {
+    "default_popup": "popup.html", // Popup ahora es solo un toggle
+    "default_icon": {
+      "48": "icons/icon-48.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content_script.js"],
+      "css": ["content_style.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js" // Sigue manejando los comandos
+  },
+  "commands": { // Mantenemos los atajos existentes
+    "increase-speed": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Period",
+        "mac": "Command+Shift+Period"
+      },
+      "description": "Aumentar velocidad (+0.10x)"
+    },
+    "decrease-speed": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Comma",
+        "mac": "Command+Shift+Comma"
+      },
+      "description": "Disminuir velocidad (-0.10x)"
+    },
+    "reset-speed": {
+        "suggested_key": {
+            "default": "Ctrl+Shift+0",
+            "mac": "Command+Shift+0"
+        },
+        "description": "Restablecer velocidad a 1.00x"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

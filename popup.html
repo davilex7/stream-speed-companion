@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamSpeed Toggle</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <h1>StreamSpeed Companion</h1>
+        <div class="toggle-container">
+            <label class="switch">
+                <input type="checkbox" id="visibilityToggle">
+                <span class="slider round"></span>
+            </label>
+            <span id="toggleLabel">Mostrar controlador en la página</span>
+        </div>
+         <div class="info">
+             Usa el controlador en la página para ajustar la velocidad.
+         </div>
+         <button id="reloadBtn" class="button reload-button" title="Recargar la extensión si algo no funciona">
+             <span class="icon">🔄</span> Recargar Extensión
+         </button>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
